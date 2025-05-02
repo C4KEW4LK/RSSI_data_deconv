@@ -3,7 +3,7 @@
 Python code to use a deconvolution to filter RSSI data from "winegard-sky-scan" data to ideally enhance the data assuming the data is diffraction limited. It uses an Airy disk (https://en.wikipedia.org/wiki/Airy_disk) as the expected Point spread function (PSF) (https://en.wikipedia.org/wiki/Point_spread_function) for the radio telescope setup. The satellietes should effectively be point sources as they are so small and far away. Using these assumptions you should be able to "deblur" or recreate the actual data.
 
 
-![image](files:example_data/example_filtered data.png)
+![image](files:/example_data/example_filtered data.png)
 
 ## Features
 
