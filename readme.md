@@ -1,21 +1,19 @@
 # Signal Strength Analysis Tool
 
-A Python tool for processing, visualizing, and enhancing signal strength data collected across azimuth and altitude coordinates.
+Python code to use a deconvolution to filter RSSI data from "winegard-sky-scan" data to ideally enhance the data assuming the data is diffraction limited. It uses an Airy disk (https://en.wikipedia.org/wiki/Airy_disk) as the expected Point spread function (PSF) (https://en.wikipedia.org/wiki/Point_spread_function) for the radio telescope setup. The satellietes should effectively be point sources as they are so small and far away. Using these assumptions you should be able to "deblur" or recreate the actual data.
 
 ## Features
 
-- Data loading and preprocessing of signal strength measurements
 - 2D grid interpolation for higher resolution analysis
 - Airy pattern fitting to characterize signal properties
 - Richardson-Lucy deconvolution to enhance signal resolution
-- Comprehensive visualization of original, interpolated, and deconvolved data
 - Ability to use external point spread function (PSF) parameters
 
 ## Installation
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/signal-strength-analysis.git
+   git clone https://github.com/C4KEW4LK/RSSI_data_deconv.git
    cd signal-strength-analysis
    ```
 
@@ -31,7 +29,7 @@ A Python tool for processing, visualizing, and enhancing signal strength data co
 The tool can be run directly from the command line:
 
 ```bash
-python signal_processor.py data_file.tsv [OPTIONS]
+python signal_processor.py data_file.txt [OPTIONS]
 ```
 
 #### Options:
@@ -53,16 +51,14 @@ from signal_processor import process_signal_data
 
 # Process from file
 results = process_signal_data(
-    file_path='sample_data.tsv', 
+    file_path='sample_data.txt', 
     deconv_iterations=10, 
-    roi_width=15
 )
 
 # Or process from arrays
 results = process_signal_data(
     data_arrays=(azimuth_array, altitude_array, signal_array),
     deconv_iterations=10, 
-    roi_width=15
 )
 ```
 
@@ -95,19 +91,19 @@ Example:
 ### Basic Usage
 
 ```bash
-python signal_processor.py telescope_data.tsv --save-plots --output-dir results
+python signal_processor.py telescope_data.txt --save-plots --output-dir results
 ```
 
 ### Using External PSF Parameters
 
 ```bash
-python signal_processor.py new_data.tsv --external-psf previous_psf_parameters.txt
+python signal_processor.py new_data.txt --external-psf previous_psf_parameters.txt
 ```
 
 ### Specifying Region of Interest
 
 ```bash
-python signal_processor.py signal_data.tsv --roi 10 --search 170 180 35 45
+python signal_processor.py signal_data.txt --roi 10 --search 170 180 35 45
 ```
 
 ## How It Works
