@@ -166,7 +166,7 @@ def fill_missing_values(grid):
         return grid
 
 
-def plot_signal_map(grid, extent, title, cbar_label, filename, cmap='inferno', save_dir=None):
+def plot_signal_map(grid, extent, title, cbar_label, filename, cmap='CMRmap', save_dir=None):
     """Create and save a visualization of the signal strength map."""
     plt.figure(figsize=(12, 10))
     im = plt.imshow(
