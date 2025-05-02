@@ -1,0 +1,7 @@
+PSF Parameters:
+Amplitude: 160.858405
+Center (Az, Alt): (174.591201, 43.086928) degrees
+Characteristic radius: 6.727093 degrees
+Background: 411.273703
+PSF kernel shape: (123, 123)
+PSF kernel sum: 1.0000000000
