@@ -1,8 +1,11 @@
 # Signal Strength Filter Tool
 
 Python code to use a deconvolution to filter RSSI data from "winegard-sky-scan" data to ideally enhance the data using a few assumptions about the setup. The code uses an Airy disk as the expected Point spread function (PSF) for the radio telescope setup, thene uses deconvolution to try and extract the underlying data.
+
 https://en.wikipedia.org/wiki/Airy_disk
+
 https://en.wikipedia.org/wiki/Point_spread_function
+
 https://en.wikipedia.org/wiki/Deconvolution
 
 
