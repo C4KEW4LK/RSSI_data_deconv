@@ -11,13 +11,6 @@ https://en.wikipedia.org/wiki/Deconvolution
 
 ![Example before and after](example_data/example_filtered_data.png)
 
-## Features
-
-- 2D grid interpolation for higher resolution analysis
-- Airy pattern fitting to characterize signal properties
-- Richardson-Lucy deconvolution to enhance signal resolution
-- Ability to use external point spread function (PSF) parameters
-
 ## Installation
 
 1. Clone this repository:
@@ -40,6 +33,8 @@ The tool can be run directly from the command line:
 ```bash
 python signal_processor.py data_file.txt [OPTIONS]
 ```
+
+The code either uses an external defined PSF or calculates it from fitting airy disk to the peak in the region of interest (ROI) 
 
 #### Options:
 
